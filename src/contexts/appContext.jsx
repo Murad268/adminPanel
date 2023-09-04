@@ -53,13 +53,16 @@ export const AppContextProvider = ({ children }) => {
 	}
 
 	useEffect(() => {
-		setIsLoading(true)
 		getData('http://localhost:3004/coins')
-			.then((res) => setCoins(res))
-			.finally(setIsLoading(false))
+			.then((res) => {
+				setCoins(res)
+				setIsLoading(false)
+			})
+			.finally()
 	}, [])
 
 	async function getData(url) {
+		setIsLoading(true)
 		const res = await fetch(url)
 		return await res.json()
 	}
