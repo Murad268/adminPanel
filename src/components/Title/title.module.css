@@ -1,0 +1,8 @@
+h1 {
+   font-family: var(--main-font);
+   font-size: 50px;
+   font-weight: 300;
+   line-height: 59px;
+   letter-spacing: 0em;
+   text-align: left;
+}

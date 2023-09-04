@@ -1,0 +1,50 @@
+.form {
+
+   height: 80vh;
+   width: 100%;
+}
+
+.form>div {
+   width: 374px;
+}
+
+label {
+   color: #000;
+   font-family: var(--main-font);
+   font-size: 14px;
+   font-style: normal;
+   font-weight: 700;
+   line-height: 109%;
+}
+
+input {
+   height: 48px;
+   flex-shrink: 0;
+}
+
+label {
+   display: block;
+   margin-bottom: 5px;
+}
+
+
+
+form {
+   row-gap: 20px;
+}
+
+button {
+   background-color: var(--main-purple);
+   width: 120px;
+   height: 48px;
+   flex-shrink: 0;
+   border: none;
+   color: var(--main-white);
+   margin: 0 auto;
+   text-align: center;
+   font-family: var(--main-font);
+   font-size: 14px;
+   font-style: normal;
+   font-weight: 400;
+   line-height: normal;
+}

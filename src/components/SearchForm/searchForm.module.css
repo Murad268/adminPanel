@@ -1,0 +1,12 @@
+.main_div{
+  display: flex;
+  column-gap: 30px;
+}
+
+.search {
+  max-width: 400px;
+}
+
+.search form {
+  margin-top: 25px;
+}

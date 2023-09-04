@@ -1,0 +1,84 @@
+:root {
+  --main-font: Roboto;
+  --main-purple: #833AE0;
+  --main-white: #FFF
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+ul,
+ol {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding-left: 9px;
+}
+
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  padding-top: 52px;
+  padding-left: 52px;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
+
+.panel__container {
+  margin-top: 40px;
+  row-gap: 25px;
+}
+
+
+.react-confirm-alert-body h1 {
+  font-size: 30px !important;
+}
+
+.add__coin {
+  display: flex;
+  align-items: center;
+  column-gap: 30px;
+  color: black
+}
+.add__coin span {
+  text-decoration: underline;
+}
+.add__block {
+  width: 120px;
+  height: 120px;
+  flex-shrink: 0;
+  border: 1px solid black;
+  border-radius: 100%;
+  font-size: 40px;
+  cursor: pointer;
+}
