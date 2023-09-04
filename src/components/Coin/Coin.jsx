@@ -29,7 +29,7 @@ function Coin({coin}) {
 				/>
 			</div>
 			<div className='coin__center'>
-				<h6 className={styles.coin__center__title}>C{coin.name}</h6>
+				<h6 className={styles.coin__center__title}>{coin.name}</h6>
 				<p>
 					{coin.shortD}
 				</p>

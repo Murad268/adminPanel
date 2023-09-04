@@ -6,6 +6,15 @@ export const AppContextProvider = ({ children }) => {
 	const [coins, setCoins] = useState([])
 	const [isLoading, setIsLoading] = useState(false)
 	const navigate = useNavigate()
+
+	function searchData(e, value) {
+		e.preventDefault()
+		e.target.reset()
+		getData(`http://localhost:3004/coins?name_like=${value}`)
+			.then((res) => setCoins(res))
+			.finally(setIsLoading(false))
+	}
+
 	async function addData(url, data) {
 		const response = await fetch(`http://localhost:3004/${url}`)
 		const existingData = await response.json()
@@ -21,7 +30,7 @@ export const AppContextProvider = ({ children }) => {
 				},
 				body: JSON.stringify(newData),
 			})
-		} 
+		}
 	}
 
 	function deleteData(id) {
@@ -33,7 +42,9 @@ export const AppContextProvider = ({ children }) => {
 			},
 		}).then((response) => {
 			if (response.ok) {
-				getData('http://localhost:3004/coins').then((res) => setCoins(res))
+				getData('http://localhost:3004/coins')
+					.then((res) => setCoins(res))
+					.finally(setIsLoading(false))
 				toast('Coin was deleted successfully')
 			} else {
 				console.error(`Failed to delete item with ID ${id}.`)
@@ -68,12 +79,14 @@ export const AppContextProvider = ({ children }) => {
 			addData('quality', data.quality)
 			addData('metal', data.metal)
 			navigate('/')
-			getData('http://localhost:3004/coins').then((res) => setCoins(res))
+			getData('http://localhost:3004/coins')
+				.then((res) => setCoins(res))
+				.finally(setIsLoading(false))
 			toast('Coin was added successfully')
 		})
 	}
 
-	const values = { addCoin, coins, deleteData, isLoading }
+	const values = { addCoin, coins, deleteData, isLoading, searchData }
 	return <AppContext.Provider value={values}>{children}</AppContext.Provider>
 }
 

@@ -1,13 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from './searchForm.module.css'
+import { useApp } from '../../contexts/appContext'
 
 function SearchForm() {
+	const {searchData} = useApp()
+	const [value, setValue] = useState()
 	return (
 		<div className={styles.search}>
-			<form action=''>
+			<form onSubmit={(e) => searchData(e, value)} action=''>
 				<label htmlFor=''>Input field</label>
 				<div className={styles.main_div}>
-					<input type='text' />
+					<input onInput={e => setValue(e.target.value)} type='text' />
 					<button>Search</button>
 				</div>
 			</form>
